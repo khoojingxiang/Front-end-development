@@ -1,0 +1,1019 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <script src="js/navbar.js"></script>
+    <script src="js/boostrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/home.css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
+<style>
+    header {
+        position: relative;
+        background-color: black;
+        height: 75vh;
+        min-height: 25rem;
+        width: 100%;
+        overflow: hidden;
+    }
+
+        header video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: 0;
+            -ms-transform: translateX(-50%) translateY(-50%);
+            -moz-transform: translateX(-50%) translateY(-50%);
+            -webkit-transform: translateX(-50%) translateY(-50%);
+            transform: translateX(-50%) translateY(-50%);
+        }
+
+        header .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        header .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: black;
+            opacity: 0.5;
+            z-index: 1;
+        }
+
+    /* Media Query for devices withi coarse pointers and no hover functionality */
+
+    /* This will use a fallback image instead of a video for devices that commonly do not support the HTML5 video element */
+
+    @media (pointer: coarse) and (hover: none) {
+        header {
+            background: url('https://source.unsplash.com/XT5OInaElMw/1600x900') black no-repeat center center scroll;
+        }
+
+            header video {
+                display: none;
+            }
+    }
+
+    body {
+        font-family: "Monteserrat", monospace;
+        /*background-image: linear-gradient(45deg, #0d3e76, #076486);*/
+        background-image: linear-gradient(45deg, black, black);
+        font-weight: bold;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    header {
+        top: 0;
+        position: relative;
+        display: flex;
+        align-items: stretch;
+    }
+
+    table {
+        border: 3px solid black;
+        margin-left: 5px;
+    }
+
+    caption {
+        font-size: 20px;
+    }
+
+    .input-group-text {
+        display: flex;
+        align-items: center;
+        padding: 0.375rem 0.75rem;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #212529;
+        text-align: center;
+        white-space: nowrap;
+        background-color: #e9ecef;
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+    }
+
+    .timeline {
+        position: relative;
+        background: black;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        padding: 5rem;
+        margin: 0 auto 1rem auto;
+        overflow: hidden;
+    }
+
+        .timeline:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            margin-left: -2px;
+            border-right: 2px solid white;
+            height: 100%;
+            display: block;
+        }
+
+    .timeline-row {
+        padding-left: 50%;
+        position: relative;
+        margin-bottom: 30px;
+    }
+
+        .timeline-row .timeline-time {
+            position: absolute;
+            right: 50%;
+            top: 15px;
+            text-align: right;
+            margin-right: 20px;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+            .timeline-row .timeline-time small {
+                display: block;
+                font-size: 0.8rem;
+            }
+
+        .timeline-row .timeline-content {
+            position: relative;
+            padding: 20px 30px;
+            background: #C2CFA1;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+        }
+
+            .timeline-row .timeline-content:after {
+                content: "";
+                position: absolute;
+                top: 20px;
+                height: 16px;
+                width: 16px;
+                background: #C2CFA1;
+            }
+
+            .timeline-row .timeline-content:before {
+                content: "";
+                position: absolute;
+                top: 20px;
+                right: -49px;
+                width: 20px;
+                height: 20px;
+                -webkit-border-radius: 100px;
+                -moz-border-radius: 100px;
+                border-radius: 100px;
+                z-index: 10;
+                background: black;
+                border: 2px solid white;
+            }
+
+            .timeline-row .timeline-content h4 {
+                margin: 0 0 20px 0;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                line-height: 150%;
+                color: black;
+            }
+
+            .timeline-row .timeline-content p {
+                margin-bottom: 30px;
+                line-height: 150%;
+            }
+
+            .timeline-row .timeline-content i {
+                font-size: 1.2rem;
+                line-height: 100%;
+                padding: 15px;
+                -webkit-border-radius: 100px;
+                -moz-border-radius: 100px;
+                border-radius: 100px;
+                background: black;
+                margin-bottom: 10px;
+                display: inline-block;
+            }
+
+            .timeline-row .timeline-content .thumbs {
+                margin-bottom: 20px;
+                display: flex;
+            }
+
+                .timeline-row .timeline-content .thumbs img {
+                    margin: 5px;
+                    max-width: 60px;
+                }
+
+            .timeline-row .timeline-content .badge {
+                color: #ffffff;
+                background: linear-gradient(120deg, #00b5fd 0%, #0047b1 100%);
+            }
+
+        .timeline-row:nth-child(even) .timeline-content {
+            margin-left: 40px;
+            text-align: left;
+        }
+
+            .timeline-row:nth-child(even) .timeline-content:after {
+                left: -8px;
+                right: initial;
+                border-bottom: 0;
+                border-left: 0;
+                transform: rotate(-135deg);
+            }
+
+            .timeline-row:nth-child(even) .timeline-content:before {
+                left: -52px;
+                right: initial;
+            }
+
+        .timeline-row:nth-child(odd) {
+            padding-left: 0;
+            padding-right: 50%;
+        }
+
+            .timeline-row:nth-child(odd) .timeline-time {
+                right: auto;
+                left: 50%;
+                text-align: left;
+                margin-right: 0;
+                margin-left: 20px;
+            }
+
+            .timeline-row:nth-child(odd) .timeline-content {
+                margin-right: 40px;
+            }
+
+                .timeline-row:nth-child(odd) .timeline-content:after {
+                    right: -8px;
+                    border-left: 0;
+                    border-bottom: 0;
+                    transform: rotate(45deg);
+                }
+
+    @media (max-width: 992px) {
+        .timeline {
+            padding: 15px;
+        }
+
+            .timeline:after {
+                border: 0;
+            }
+
+            .timeline .timeline-row:nth-child(odd) {
+                padding: 0;
+            }
+
+                .timeline .timeline-row:nth-child(odd) .timeline-time {
+                    position: relative;
+                    top: 0;
+                    left: 0;
+                    margin: 0 0 10px 0;
+                }
+
+                .timeline .timeline-row:nth-child(odd) .timeline-content {
+                    margin: 0;
+                }
+
+                    .timeline .timeline-row:nth-child(odd) .timeline-content:before {
+                        display: none;
+                    }
+
+                    .timeline .timeline-row:nth-child(odd) .timeline-content:after {
+                        display: none;
+                    }
+
+            .timeline .timeline-row:nth-child(even) {
+                padding: 0;
+            }
+
+                .timeline .timeline-row:nth-child(even) .timeline-time {
+                    position: relative;
+                    top: 0;
+                    left: 0;
+                    margin: 0 0 10px 0;
+                    text-align: left;
+                }
+
+                .timeline .timeline-row:nth-child(even) .timeline-content {
+                    margin: 0;
+                }
+
+                    .timeline .timeline-row:nth-child(even) .timeline-content:before {
+                        display: none;
+                    }
+
+                    .timeline .timeline-row:nth-child(even) .timeline-content:after {
+                        display: none;
+                    }
+    }
+
+
+
+
+    body {
+        font-family: "Monteserrat", monospace;
+        /*background-image: linear-gradient(45deg, #0d3e76, #076486);*/
+        background-image: linear-gradient(45deg, black, black);
+        font-weight: bold;
+    }
+
+    header {
+        position: relative;
+        background-color: black;
+        height: 75vh;
+        min-height: 25rem;
+        width: 100%;
+        overflow: hidden;
+    }
+
+        header video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: 0;
+            -ms-transform: translateX(-50%) translateY(-50%);
+            -moz-transform: translateX(-50%) translateY(-50%);
+            -webkit-transform: translateX(-50%) translateY(-50%);
+            transform: translateX(-50%) translateY(-50%);
+        }
+
+        header .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        header .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: black;
+            opacity: 0.5;
+            z-index: 1;
+        }
+
+    /* Media Query for devices withi coarse pointers and no hover functionality */
+
+    /* This will use a fallback image instead of a video for devices that commonly do not support the HTML5 video element */
+
+    @media (pointer: coarse) and (hover: none) {
+        header {
+            background: url('https://source.unsplash.com/XT5OInaElMw/1600x900') black no-repeat center center scroll;
+        }
+
+            header video {
+                display: none;
+            }
+    }
+    .nav {
+        position: fixed;
+        right: 0;
+        width: 16vw;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        background-color: #9887FE;
+        z-index: 100;
+        align-items: stretch;
+        gap: 2rem;
+        transform: translateX(100%);
+        transition: all 0.2s;
+        box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+        opacity: 0.9;
+        padding-left: 3%;
+    }
+
+    .nav-open {
+        transform: translateX(0%);
+    }
+
+    .nav a {
+        color: inherit;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+    }
+
+    .nav li {
+        list-style: none;
+        font-size: 1.39vw;
+        padding: 0;
+        color: white;
+    }
+
+        .nav li:nth-child(1) {
+            margin-top: 20vh;
+        }
+
+    #burger {
+        width: 3vw;
+        height: 3vw;
+        position: absolute;
+        margin-right: 0;
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: .5s ease-in-out;
+        -moz-transition: .5s ease-in-out;
+        -o-transition: .5s ease-in-out;
+        transition: .5s ease-in-out;
+        cursor: pointer;
+        right: 7vw;
+        z-index: 1000;
+        top: 9.5vh;
+    }
+
+        #burger span {
+            display: block;
+            position: absolute;
+            height: 10%;
+            width: 100%;
+            background: #FFB870;
+            border-radius: 9px;
+            opacity: 1;
+            left: 0;
+            -webkit-transform: rotate(0deg);
+            -moz-transform: rotate(0deg);
+            -o-transform: rotate(0deg);
+            transform: rotate(0deg);
+            -webkit-transition: .25s ease-in-out;
+            -moz-transition: .25s ease-in-out;
+            -o-transition: .25s ease-in-out;
+            transition: .25s ease-in-out;
+        }
+
+            #burger span:nth-child(1) {
+                top: 0px;
+            }
+
+            #burger span:nth-child(2),
+            #burger span:nth-child(3) {
+                top: 10px;
+            }
+
+            #burger span:nth-child(4) {
+                top: 20px;
+            }
+
+        #burger.open span:nth-child(1) {
+            top: 0px;
+            width: 0%;
+            left: 0;
+        }
+
+        #burger.open span:nth-child(2) {
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+
+        #burger.open span:nth-child(4) {
+            top: 0;
+            width: 0%;
+            left: 0;
+        }
+    
+    /*latest news*/
+    .nk-news-box {
+        height: 450px;
+        width: 1200px;
+        margin: auto;
+        overflow: hidden;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        border: 1px solid;
+        box-sizing: border-box;
+        margin-bottom:20px;
+        border-radius:25px;
+        border-color:white;
+    }
+
+    .nk-news-box-list {
+        float: left;
+        width: 50%;
+        height: 100%;
+        box-sizing: border-box
+    }
+
+    .nano {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+
+    .nano-content {
+        position: absolute;
+        inset: 0px;
+        overflow: hidden scroll;
+        outline: none;
+        box-sizing: border-box;
+    }
+
+    ::-webkit-scrollbar {
+        width: 10px;
+        opacity: .01;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: rgb(0,0,0,0.4);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #7f8b92;
+        border-radius:10px;
+    }
+
+    .nk-news-box-item {
+        padding: 10px;
+        box-sizing: border-box;
+        display: block;
+        line-height: 1.7;
+        outline: 2px outset #FEC53A
+    }
+
+    .nk-news-box-item-active {
+        padding: 10px;
+        cursor: pointer;
+        box-sizing: border-box;
+        display: box;
+        clear: both;
+    }
+
+    .nk-news-box-item-img {
+        float: left;
+        max-width: 100%;
+        max-height: 100%;
+        margin-right: 20px;
+        overflow: hidden;
+        box-sizing: border-box;
+        transform: scale(1);
+    }
+
+        .nk-news-box-item-img img {
+            vertical-align: middle;
+            width: 200px;
+            height: 130px;
+        }
+
+    .nk-news-box-item-full-img {
+        display: none;
+        vertical-align: middle;
+        border-style: none;
+        box-sizing: border-box;
+    }
+
+    .nk-news-box-item-title {
+        margin-top: 5px;
+        margin-bottom: 2px;
+        font-size: 1.1rem;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        text-decoration:underline;
+    }
+
+    .nk-news-box-each-info {
+        border-left: 1px solid #293139;
+        float: left;
+        width: 50%;
+        height: 100%;
+        box-sizing: border-box;
+    }
+
+    h3 {
+        font-weight: 600;
+        text-transform: uppercase;
+        line-height: 1.2;
+        box-sizing: border-box;
+        color: rgb(255,255,255);
+    }
+
+    .nk-news-box-item-text p {
+        margin-bottom: 13px;
+        overflow: hidden;
+        --max-lines: 3;
+        line-height: 1.4;
+        max-height: calc(v ar(--max-lines)*1em*var(--line-height));
+        line-height: var(--line-height);
+        /*text-overflow: ellipsis;*/
+        word-wrap: break-word;
+        white-space: normal;
+        box-sizing: border-box;
+        color: rgb(255,255,255);
+        font-family: 'Poppins', sans-serif;
+        position: relative;
+    }
+
+
+
+    .nk-news-box {
+    }
+
+    .nk-news-box-item-image {
+        width: 100%;
+        height: auto;
+        vertical-align: middle;
+        border-style: none;
+    }
+
+        .nk-news-box-item-image img {
+            width: 600px;
+            height: 300px;
+        }
+
+    .nk-news-box-item-categories {
+        position: absolute;
+        top: 10px;
+        right: 0;
+        margin-top: 6px;
+        font-size: 1rem;
+        background-color: #22a2b1;
+        border-radius: 25px 0px 0px 25px;
+    }
+
+    .nk-news-box-item-categories2 {
+        position: absolute;
+        top: 350px;
+        right: 0;
+        margin-top: 6px;
+        font-size: 1rem;
+        background-color: #22a2b1;
+        border-radius: 25px 0px 0px 25px;
+    }
+
+        .nk-news-box-item-categories2 span {
+            padding: 2px 19px;
+            color: #fff;
+            border-top-left-radius: 4px;
+        }
+
+    .nk-news-box-item-categories3 {
+        position: absolute;
+        top: 630px;
+        right: 0;
+        margin-top: 6px;
+        font-size: 1rem;
+        background-color: #22a2b1;
+        border-radius: 25px 0px 0px 25px;
+    }
+
+        .nk-news-box-item-categories3 span {
+            padding: 2px 19px;
+            color: #fff;
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+        }
+
+    .nk-news-box-item-categories4 {
+        position: absolute;
+        top: 930px;
+        right: 0;
+        margin-top: 6px;
+        font-size: 1rem;
+        background-color: #22a2b1;
+        border-radius: 25px 0px 0px 25px;
+    }
+
+        .nk-news-box-item-categories4 span {
+            padding: 2px 19px;
+            color: #fff;
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+        }
+
+
+    .nk-news-box-item-categories span {
+        padding: 2px 19px;
+        color: #fff;
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+    }
+
+    .nk
+    .bg-main-4 {
+        background-color: #22a2b1;
+    }
+
+
+
+    .nk-news-box-item-url {
+        color: cyan;
+        text-decoration: none;
+        box-sizing: border-box;
+        cursor: pointer;
+        line-height: 1.7;
+        font-family: "Open Sans", sans-serif;
+    }
+  
+</style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Bootstrap for header & navigation bar -->
+            <div class="col-sm-12">
+                <header>
+                    <div class="overlay rounded"></div>
+                    <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+                        <source src="Media/Vid/HeaderVid.mp4" type="video/mp4">
+                    </video>
+
+                    <div class="container h-100">
+                        <!-- To Do: Add Bootstrap navbar -->
+                        <nav class="navbar navbar-expand-md navbar-custom">
+
+                            <!--- Toggler/collapsible button-->
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavBar" aria-expanded="true">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+
+                            <!-- Navbar Links -->
+                            <div class="navbar-collapse collapse show" id="collapsibleNavBar" style="">
+                                <ul class="navbar-nav nav-custom mx-auto text-danger">
+                                    <li class="nav-item">
+                                        <a class="nav-link text-danger" href="index.html">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-danger" href="CecilHotel.html">FPS</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-danger" href="OldChangiHospital.html">MOBA</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-danger" href="IslandDoll.html">Sports</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-danger" href="GonjiamAsylum.html">Strategy</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-danger" href="Credits.html">Credits</a>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </nav>
+                        <h1></h1>
+                        <div class="d-flex h-100 text-center align-items-center">
+                            <div class="w-100 text-white">
+                                <h1 class="display-3">GameSonaR</h1>
+                                <p class="lead mb-0">
+                                    Welcome to GameSonaR <br />
+                                    where we feature and showcase 4 genres of games <br />
+                                    as well 4 games in each genre.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <!-- Page section example for content below the video header -->
+                <section class="my-5">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-8 mx-auto text-center text-white">
+                                <h3>
+                                    This website provides all the information you need for these games, from
+                                    the required PC specifications to a detailed history behind the games themselves
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <!--News section-->
+        <div class="nk-news-box">
+            <div class="nk-news-box-list">
+                <div class="nano">
+                    <div class="nano-content">
+
+                        <!--FPS Games-->
+                        <div class="nk-news-box-item-active">
+                            <div class="nk-news-box-item-img">
+                                <img src="images/fps.jpg" alt="Mobile legends BANG BANG">
+                            </div>
+                            <img src="images/mobilelegend.jpg" alt="Smell magic in the air. Or maybe barbecue" class="nk-news-box-item-full-img">
+                            <h3 class="nk-news-box-item-title">FPS Games</h3>
+
+                            <div class="nk-news-box-item-text">
+                                <p>
+                                    First-person shooter (FPS) is a sub-genre of shooter video games centered on gun and other weapon-based combat in a first-person perspective, with the player experiencing the action through the eyes of the protagonist and controlling the player character in a three-dimensional space.
+                                </p>
+                            </div>
+                            <a href="blog-article.html" class="nk-news-box-item-url">Read More</a>
+
+                        </div>
+
+                        <!--MOBA-->
+                        <div class="nk-news-box-item">
+                            <div class="nk-news-box-item-img">
+                                <img src="images/moba.jpg" alt="Grab your sword and fight the Horde">
+                            </div>
+                            <img src="images/Wildrift_Cover_1.jpg" alt="Grab your sword and fight the Horde" class="nk-news-box-item-full-img">
+                            <h3 class="nk-news-box-item-title">Grab your sword and fight the Horde</h3>
+
+
+                            <div class="nk-news-box-item-text">
+                                <p> A MOBA, or Massive Online Battle Arena, typically puts a team of five players against another. Generally played on PC, MOBAs have the ultimate goal of destroying the enemy base. Players must work together to acquire items and territory using unique characters, each with their own advantages and weaknesses.</p>
+                            </div>
+                            <a href="moba.html" class="nk-news-box-item-url">Read More</a>
+
+                        </div>
+
+                        <!--Sports-->
+                        <div class="nk-news-box-item">
+                            <div class="nk-news-box-item-img">
+                                <img src="images/sports.jpg" alt="We found a witch! May we burn her?">
+                            </div>
+                            
+                            <h3 class="nk-news-box-item-title">SPORTS</h3>
+
+
+
+                            <div class="nk-news-box-item-text">
+                                <p>
+                                    Sports gaming refers to video games that simulate playing or managing a sports team or event. Players can control individual players or teams and compete against other players or computer-controlled teams in various sports such as football, basketball, baseball, soccer, golf, and more. These games often feature realistic graphics and gameplay, as well as realistic statistics and player ratings. The goal is to provide a virtual representation of the sport and offer players a fun and engaging experience.
+                                </p>
+                            </div>
+                            <a href="blog-article.html" class="nk-news-box-item-url">Read More</a>
+
+                        </div>
+
+                        <!--Strategy-->
+                        <div class="nk-news-box-item">
+                            <div class="nk-news-box-item-img">
+                                <img src="images/strategy.jpg" alt="For good, too though, in consequence">
+                            </div>
+                           
+                            <h3 class="nk-news-box-item-title">STRATEGY</h3>
+
+
+
+                            <div class="nk-news-box-item-text">
+                                <p>
+                                    Strategy games are a genre of video games that challenge players to make decisions and manage resources in order to achieve a goal. Players are often put in control of a faction or civilization and must make choices regarding resource management, diplomacy, and military strategy in order to succeed. The gameplay often involves slow-paced, turn-based decision making, with an emphasis on careful planning and resource management.
+                                </p>
+                            </div>
+                            <a href="blog-article.html" class="nk-news-box-item-url">Read More</a>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="nk-news-box-each-info">
+                <div class="nano">
+                    <div class="nano-content">
+                        <!-- There will be inserted info about selected news-->
+                        <div class="nk-news-box-item-image">
+                            <img id="1" src="images/dota.jpg">
+                            <span class="nk-news-box-item-categories">
+                                <span class="bg-main-4">Dota 2</span>
+                            </span>
+                        </div>
+                        <div class="nk-news-box-item-image">
+                            <img id="2" src="images/brawlstars.jpg">
+                            <span class="nk-news-box-item-categories2">
+                                <span class="bg-main-4">Brawl stars</span>
+                            </span>
+                        </div>
+                        <div class="nk-news-box-item-image">
+                            <img id="3" src="images/LoL.jpg">
+                            <span class="nk-news-box-item-categories3">
+                                <span class="bg-main-4">League of Legends</span>
+                            </span>
+                        </div>
+
+                        <div class="nk-news-box-item-image">
+                            <img id="4" src="images/MobileLegends4.jpg">
+                            <span class="nk-news-box-item-categories4">
+                                <span class="bg-main-4">Mobile legends</span>
+                            </span>
+                        </div>
+                    </div>
+
+                    <!--<h3 class="nk-news-box-item-title">Smell magic in the air. Or maybe barbecue</h3>
+                <div class="nk-news-box-item-text">
+                    <p>With what mingled joy and sorrow do I take up the pen to write to my dearest friend! Oh, what a change between to-day and yesterday! Now I am friendless and alone...</p>
+                </div>
+                <a href="blog-article.html" class="nk-news-box-item-more">Read More</a>-->
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="bg-dark text-center text-white">
+            <div class="container p-4">
+                <section class="">
+                    <form action="">
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-auto">
+                                <p class="pt-2">
+                                    <strong>Sign up for our newsletter</strong>
+                                </p>
+                            </div>
+                            <div class="col-md-5 col-12">
+                                <div class="form-outline form-white mb-4">
+                                    <input type="email" id="form5Example21" class="form-control" placeholder="Email Address" />
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <button type="submit" class="btn btn-outline-light mb-4">
+                                    Subscribe
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </section>
+                <section class="mb-4">
+                    <h4>About Us</h4>
+                    <p>
+                        We are a group of 4 Ngee Ann Polytechnic students and this is our assignment on Cyber Gaming.<br />We have provided information about various types of genres
+                        and games through this informative website, and ensuring that our user experience is at the top of the list.
+                    </p>
+                    <p>
+                        We in no way gain any sort of monetary gains from this website, all information provided & sourced has been referenced to give credits to the
+                        respective owners/creators.
+                    </p>
+                </section>
+                <section class="">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                            <h5 class="text-uppercase">Discover</h5>
+
+                            <ul class="list-unstyled mb-0">
+                                <li>
+                                    <a href="#!" class="text-white">First Person Shooters</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="text-white">Multiplayer Online Battle Arena</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="text-white">Strategy</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="text-white">Sports</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                            <h5 class="text-uppercase">Members [LINKEDIN]</h5>
+
+                            <ul class="list-unstyled mb-0">
+                                <li>
+                                    <a href="https://www.linkedin.com/in/gabriel-lim-745336238/" class="text-white" target="_blank">Lim Jia An Gabriel</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.linkedin.com/in/chng-zhi-ren-93310b238/" class="text-white" target="_blank">Chng Zhi Ren</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.linkedin.com/in/khoo-jing-xiang-706ba2237/" class="text-white" target="_blank">Khoo Jing Xiang</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.linkedin.com/in/chua-yu-xuan/" class="text-white" target="_blank">Chua Yu Xuan</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </footer>
+    </div>
+    <!-- Footer -->
+</body>
+</html>
